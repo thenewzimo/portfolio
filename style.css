@@ -1,0 +1,237 @@
+   :root {
+    --colore-sfondo: #10101a; 
+    --colore-testo: #e0e0e0;   
+    --colore-primario: #ff00ff; 
+    --colore-nodo: #2a2a3a;    
+    --colore-pannello: #1a1a2a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--colore-sfondo);
+    color: var(--colore-testo);
+    font-family: 'Roboto Mono', monospace;
+    overflow: hidden; 
+}
+
+/* --- Point Wallpaper --- */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+/* --- Title --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    text-align: center;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Move the Node on left while the panel open */
+.main-content.content-shifted {
+    transform: translateX(-150px);
+}
+
+.intro h1 {
+    margin-top: -7rem;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: var(--colore-primario); 
+    margin-bottom: 3rem;
+}
+
+
+/* --- Nodes --- */
+.nodes-wrapper {
+    position: relative;
+    width: 700px;
+    height: 200px;
+    margin-top: 8rem;
+}
+
+.nodes-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.node {
+    background-color: var(--colore-nodo);
+    border: 2px solid var(--colore-primario);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: 10;
+}
+
+.node:hover {
+    background-color: var(--colore-primario);
+    color: white;
+    box-shadow: 0 0 25px var(--colore-primario);
+}
+
+
+/* --- Position of the nodes --- */
+.node[data-node="chi-sono"]   { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+.node[data-node="skill"] { top: 0%; left: 20%; transform: translate(-50%, -50%); }
+.node[data-node="progetti"]   { top: 50%; left: 40%; transform: translate(-50%, -50%); }
+.node[data-node="percorso"]   { top: 100%; left: 60%; transform: translate(-50%, -50%); }
+.node[data-node="blog"]       { top: 50%; left: 80%; transform: translate(-50%, -50%); }
+.node[data-node="contatti"]   { top: 0%; left: 100%; transform: translate(-50%, -50%); }
+
+.node[data-node="chi-sono"]:hover,
+.node[data-node="skill"]:hover,
+.node[data-node="progetti"]:hover,
+.node[data-node="percorso"]:hover,
+.node[data-node="blog"]:hover,
+.node[data-node="contatti"]:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* --- Panel --- */
+#side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px; 
+    max-width: 90%; 
+    height: 100vh;
+    background-color: var(--colore-pannello);
+    border-left: 2px solid var(--colore-primario);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 2rem;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+#side-panel.is-visible {
+    transform: translateX(0);
+}
+
+#close-panel-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* --- Panel content --- */
+#panel-content h2 {
+    color: var(--colore-primario);
+    margin-bottom: 1.5rem;
+}
+#panel-content h4 {
+    color: white;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-nodo);
+    padding-bottom: 0.25rem;
+}
+#panel-content p, #panel-content li {
+    line-height: 1.6;
+    color: var(--colore-testo);
+}
+#panel-content ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+#panel-content .project-item, #panel-content .path-item {
+    margin-bottom: 2rem;
+}
+#panel-content a {
+    color: var(--colore-primario);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+#panel-content a:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--colore-primario);
+}
+.contact-links a {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+/* --- Mobile --- */
+
+@media (max-width: 800px) {    
+    .main-content {
+        justify-content: flex-start;
+        padding-top: 5rem;
+        height: auto;
+        min-height: 100vh;
+        margin-top: 3rem;
+    }
+    .intro {
+        transform: none;
+    }
+    .intro h1 {
+        font-size: 2rem;
+    }
+    .intro p {
+        font-size: 1rem;
+    }
+    .nodes-wrapper {
+        transform: none;
+        width: 60%;
+        margin-top: 2rem;
+        height: auto;
+    }
+    .nodes-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .node {
+        position: static;
+        width: 70%;
+        max-width: 350px;
+        height: 50px;
+        border-radius: 30px;
+        transform: none !important;
+    }
+    .node:hover {
+        transform: none !important;
+    }
+    .main-content.content-shifted {
+        transform: none;
+    }
+    #side-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+}
