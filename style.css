@@ -97,14 +97,14 @@ body {
 
 /* --- Position of the nodes --- */
 .node[data-node="chi-sono"]   { top: 50%; left: 0%; transform: translate(-50%, -50%); }
-.node[data-node="skill"] { top: 0%; left: 20%; transform: translate(-50%, -50%); }
+.node[data-node="competenze"] { top: 0%; left: 20%; transform: translate(-50%, -50%); }
 .node[data-node="progetti"]   { top: 50%; left: 40%; transform: translate(-50%, -50%); }
 .node[data-node="percorso"]   { top: 100%; left: 60%; transform: translate(-50%, -50%); }
 .node[data-node="blog"]       { top: 50%; left: 80%; transform: translate(-50%, -50%); }
 .node[data-node="contatti"]   { top: 0%; left: 100%; transform: translate(-50%, -50%); }
 
 .node[data-node="chi-sono"]:hover,
-.node[data-node="skill"]:hover,
+.node[data-node="competenze"]:hover,
 .node[data-node="progetti"]:hover,
 .node[data-node="percorso"]:hover,
 .node[data-node="blog"]:hover,
@@ -234,4 +234,40 @@ body {
         width: 100%;
         max-width: 100%;
     }
+}
+
+/* --- Icon and Link --- */
+.contact-links-container {
+    margin-top: 2rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    font-size: 1.2rem;
+    color: var(--colore-testo);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+}
+
+.contact-link:hover {
+    color: var(--colore-primario);
+    background-color: var(--colore-nodo);
+    padding-left: 1rem; 
+}
+
+/* Icons Style */
+.contact-link i {
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+    margin-right: 1rem;
+    color: var(--colore-primario);
+    transition: transform 0.2s ease;
+}
+
+.contact-link:hover i {
+    transform: scale(1.2);
 }

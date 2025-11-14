@@ -71,104 +71,112 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Panel content
     const nodeContent = {
         'chi-sono': `
-            <h2>Chi Sono</h2>
+            <h2>About Me</h2>
             <p>
-                Sono uno studente di Cybersecurity presso l'Università La Sapienza, con una profonda passione per questo mondo. 
-                Sono una persona estremamente curiosa, amo imparare cose nuove e mettermi costantemente alla prova.
+                I am a Cybersecurity student at Sapienza University of Rome, with a deep passion for this field. 
+                I am an extremely curious person, I love learning new things and constantly challenging myself.
             </p>
             <p>
-                Un altro mio grande interesse sono i viaggi. Ho avuto la fortuna di fare un'esperienza Erasmus a Tallinn!
+                Another great interest of mine is traveling. I was fortunate enough to have an Erasmus experience in Tallinn!
             </p>
         `,
-        'skill': `
-            <h2>Le Mie Competenze</h2>
-            <h4>Linguaggi di Programmazione</h4>
+        'competenze': `
+            <h2>My Skills</h2>
+            <h4>Programming Languages</h4>
             <ul>
                 <li>Python</li>
                 <li>C/C++</li>
                 <li>Bash/Shell Scripting</li>
                 <li>HTML, CSS, JavaScript, PHP, SQL</li>
                 <li>Java</li>
-
             </ul>
-            <h4>Tool & Tecnologie di Sicurezza</h4>
+            <h4>Security Tools & Technologies</h4>
             <ul>
                 <li><strong>Penetration Testing:</strong> Nmap, Metasploit, Burp Suite, Wireshark</li>
-                <li><strong>Virtualizzazione:</strong> Proxmox, Docker</li>
-                <li><strong>Networking:</strong> OpenSense, configurazione firewall e reti</li>
-                <li><strong>Sistemi Operativi:</strong> Linux, Windows</li>
+                <li><strong>Virtualization:</strong> Proxmox, Docker</li>
+                <li><strong>Networking:</strong> OpenSense, Firewall & Network Configuration</li>
+                <li><strong>Operating Systems:</strong> Linux, Windows</li>
             </ul>
         `,
         'progetti': `
-            <h2>Progetti Principali</h2>
+            <h2>Key Projects</h2>
             <div class="project-item">
-                <h3>Creazione e Violazione di una CTF</h3>
-                <p>Progetto universitario in cui il mio team ha progettato una macchina vulnerabile (Capture The Flag) e ha poi sfidato altri team a violarla, documentando ogni passo.</p>
+                <h3>CTF Creation and Exploitation</h3>
+                <p>A university project where my team designed a vulnerable machine (Capture The Flag) and then challenged other teams to breach it, documenting every step.</p>
             </div>
             <div class="project-item">
-                <h3>Infrastruttura di Rete Sicura</h3>
-                <p>Utilizzando Proxmox e OpenSense, ho configurato una rete virtuale segmentata con firewall, DMZ e policy di accesso per simulare un ambiente sicuro.</p>
+                <h3>Secure Network Infrastructure</h3>
+                <p>Using Proxmox and OpenSense, I configured a segmented virtual network with a firewall, DMZ, and access policies to simulate a secure corporate environment.</p>
             </div>
             <div class="project-item">
-                <h3>Progettazione di un gestore di eventi</h3>
-                <p>Progettazione di tutta la documentazione relativa ad un software ipotetico che gestisce eventi, con le varie analisi del progetto e diagrammi come ad esempio il PERT.</p>
+                <h3>Event Manager Software Design</h3>
+                <p>Designed the complete documentation for a hypothetical event management software, including project analysis and diagrams such as PERT charts.</p>
             </div>
             <div class="project-item">
-                <h3>Software di noleggio veicoli</h3>
-                <p>Un software privato che permette di gestire un entità che si occupa di noleggiare veicoli. Strutturato con una programmazione a oggetti in Java.</p>
+                <h3>Vehicle Rental Software</h3>
+                <p>A private software application to manage a vehicle rental business, structured with object-oriented programming in Java.</p>
             </div>
             <div class="project-item">
-                <h3>Calendario occupazione delle aule univaq</h3>
-                <p>Creazione di un calendario suddiviso in aree i base al dipartimento di ogni aula, in base alla sezione verranno visualizzate le disponibilità di ogni aula con i relativi eventi che ci sono. Il tutto è stato fatto utilizzando Servlet java tra sql e html.</p>
+                <h3>Univaq Classroom Occupancy Calendar</h3>
+                <p>Created a calendar divided by department to display the availability of each classroom and its scheduled events. The project was built using Java Servlets, SQL, and HTML.</p>
             </div>
             <div class="project-item">
-                <h3>E-commerce di vestiti</h3>
-                <p>In questo progetto veniva richiesto di modificare un template già esistente di un sito internet che abbia sia la parte di back end sia il front end, e modificarlo con le richieste del professore che richiedevano di trasformarlo in un e-commerce, noi lo abbiamo trasformato in un e-commerce di vestiti con tutti i vari filtri e lo abbiamo implementato con un database locale.</p>
+                <h3>Clothing E-commerce Store</h3>
+                <p>For this project, we were tasked with modifying an existing website template (both back-end and front-end) to transform it into an e-commerce platform. We converted it into a clothing store with various filters and integrated a local database.</p>
             </div>
             <div class="project-item">
-                <h3>Analisi Dati con Machine Learning</h3>
-                <p>Ho sviluppato un modello in Python per consigli di mete e altre cose (questo è da finire perche lo sto facendo ora)</p>
+                <h3>Data Analysis with Machine Learning</h3>
+                <p>I developed a Python model for suggesting travel destinations and other things (this project is currently in progress).</p>
             </div>
         `,
         'percorso': `
-            <h2>Il Mio Percorso</h2>
+            <h2>My Journey</h2>
             <div class="path-item">
-                <h3>Studente @ Tallinn University of Technology (TalTech)</h3>
-                <p><strong>2025 - Presente</strong> | Esperienza Erasmus+ di 6 mesi a Tallinn in Estonia.</p>
+                <h3>Student @ Tallinn University of Technology (TalTech)</h3>
+                <p><strong>2025 - Present</strong> | 6-month Erasmus+ experience in Tallinn, Estonia.</p>
             </div>
             <div class="path-item">
-                <h3>Laurea Magistrale in Cybersecurity</h3>
-                <p><strong>2024 - Presente</strong> | Università di Roma "La Sapienza"</p>
+                <h3>Master's Degree in Cybersecurity</h3>
+                <p><strong>2024 - Present</strong> | Sapienza University of Rome</p>
             </div>
              <div class="path-item">
                 <h3>Production Controller @ Lfoundry Technology</h3>
-                <p><strong>2021 - 2022</strong> | Stage e successivo impiego nella linea di produzione su semiconduttori.</p>
+                <p><strong>2021 - 2022</strong> | Internship and subsequent employment in the semiconductor production line.</p>
             </div>
             <div class="path-item">
-                <h3>Laurea Triennale in Informatica</h3>
-                <p><strong>2019 - 2024</strong> | Università degli studi dell'Aquila</p>
+                <h3>Bachelor's Degree in Computer Science</h3>
+                <p><strong>2019 - 2024</strong> | University of L'Aquila</p>
             </div>
             <div class="path-item">
-                <h3>Diploma in informatica</h3>
+                <h3>High School Diploma in Information Technology</h3>
                 <p><strong>2014 - 2019</strong> | IIS Ettore Majorana, Avezzano</p>
             </div>
         `,
         'blog': `
             <h2>Blog & Write-ups</h2>
-            <p>Condivido le mie conoscenze e le mie passioni attraverso la scrittura. Qui trovi i link ai miei spazi personali.</p>
-            <a href="https://thenewzimo.github.io/writeups/" target="_blank" class="external-link">Write-ups di Hack The Box</a>
-            <p>Una raccolta delle mie soluzioni e ragionamenti per le macchine ritirate di HTB.</p>
+            <p>I share my knowledge and passions through writing. Here you can find links to my personal spaces.</p>
+            <a href="https://thenewzimo.github.io/writeups/" target="_blank" class="external-link">Hack The Box Write-ups</a>
+            <p>A collection of my solutions and thought processes for retired HTB machines.</p>
             <br>
-            <a href="[INSERISCI QUI IL LINK AL BLOG ERASMUS]" target="_blank" class="external-link">Guida all'Erasmus a Tallinn</a>
-            <p>Consigli pratici e racconti della mia esperienza per aiutare futuri studenti.</p>
+            <a href="[INSERT ERASMUS BLOG LINK HERE]" target="_blank" class="external-link">Erasmus in Tallinn Guide</a>
+            <p>Practical advice and stories from my experience to help future students.</p>
         `,
         'contatti': `
-            <h2>Contattami</h2>
-            <p>Sono sempre aperto a nuove opportunità e collaborazioni. Puoi trovarmi qui:</p>
-            <div class="contact-links">
-                 <a href="https://linkedin.com/in/simone-morisi-71269a276" target="_blank">LinkedIn</a>
-                 <a href="https://github.com/thenewzimo" target="_blank">GitHub</a>
-                 <a href="https://www.instagram.com/zimoisback?igsh=M2thMWVjODZwaW1w" target="_blank">Instagram</a>
+            <h2>Contact Me</h2>
+            <p>I am always open to new opportunities and collaborations. You can find me here:</p>
+            <div class="contact-links-container">
+                <a href="https://linkedin.com/in/simone-morisi-71269a276" target="_blank" class="contact-link">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/thenewzimo" target="_blank" class="contact-link">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.instagram.com/zimoisback?igsh=M2thMWVjODZwaW1w" target="_blank" class="contact-link">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
             </div>
         `
     };
