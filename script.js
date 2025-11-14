@@ -155,11 +155,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'blog': `
             <h2>Blog & Write-ups</h2>
             <p>I share my knowledge and passions through writing. Here you can find links to my personal spaces.</p>
-            <a href="https://thenewzimo.github.io/writeups/" target="_blank" class="external-link">Hack The Box Write-ups</a>
-            <p>A collection of my solutions and thought processes for retired HTB machines.</p>
-            <br>
-            <a href="[INSERT ERASMUS BLOG LINK HERE]" target="_blank" class="external-link">Erasmus in Tallinn Guide</a>
-            <p>Practical advice and stories from my experience to help future students.</p>
+            
+            <div class="blog-links-container">
+                
+                <a href="https://thenewzimo.github.io/writeups/" target="_blank" class="blog-link">
+                    <i class="fa-solid fa-terminal"></i>
+                    <div class="link-text">
+                        <strong>Hack The Box Write-ups</strong>
+                        <span>A collection of my solutions for retired HTB machines.</span>
+                    </div>
+                </a>
+
+                <a href="[INSERT ERASMUS BLOG LINK HERE]" target="_blank" class="blog-link">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <div class="link-text">
+                        <strong>Erasmus in Tallinn Guide</strong>
+                        <span>Practical advice and stories from my experience.</span>
+                    </div>
+                </a>
+
+            </div>
         `,
         'contatti': `
             <h2>Contact Me</h2>
@@ -204,4 +219,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         mainContent.classList.remove('content-shifted');
     });
     
+    // Close panel with swipe
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    sidePanel.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+    }, false);
+    sidePanel.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipeGesture();
+    }, false);
+
+    function handleSwipeGesture() {
+        const swipeDistance = touchEndX - touchStartX;
+        const minSwipeDistance = 75; 
+        if (touchEndX > touchStartX && swipeDistance > minSwipeDistance) {
+            console.log('Swipe right detected, closing panel.');
+            sidePanel.classList.remove('is-visible');
+            mainContent.classList.remove('content-shifted');
+        }
+    }
+
 });

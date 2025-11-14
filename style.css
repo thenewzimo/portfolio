@@ -271,3 +271,50 @@ body {
 .contact-link:hover i {
     transform: scale(1.2);
 }
+
+/* --- Link Blog section --- */
+.blog-links-container {
+    margin-top: 2rem;
+}
+
+.blog-link {
+    display: flex;
+    align-items: flex-start; 
+    padding: 1rem;
+    color: var(--colore-testo);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid transparent; 
+}
+
+.blog-link:hover {
+    background-color: var(--colore-nodo);
+    border-color: var(--colore-primario);
+}
+
+.blog-link i {
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    margin-top: 0.25rem;
+    color: var(--colore-primario);
+    width: 40px;
+    text-align: center;
+}
+
+.blog-link .link-text {
+    display: flex;
+    flex-direction: column; 
+}
+
+.blog-link .link-text strong {
+    font-size: 1.1rem;
+    color: white; 
+    margin-bottom: 0.25rem;
+}
+
+.blog-link .link-text span {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
